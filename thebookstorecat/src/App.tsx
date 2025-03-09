@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sobre from "./pages/Sobre";
-import ListagemLivros from "./pages/ListagemLivros";
-import CadastroLivros from "./pages/CadastroLivros";
+import ListagemLivros from "./components/BookList/BookList";
+import CadastroLivros from "./components/BookForm/BookForm";
 import PaginaInicial from "./pages/PaginaInicial";
 import NavBar from "./components/NavBar/NavBar";
 
