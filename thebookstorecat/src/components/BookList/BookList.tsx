@@ -23,7 +23,6 @@ interface Data {
   autor: string;
   genero: string;
   data: string;
-  descricao: string;
 }
 
 function createData(
@@ -31,52 +30,34 @@ function createData(
   titulo: string,
   autor: string,
   genero: string,
-  data: string,
-  descricao: string
+  data: string
 ): Data {
-  return { id, titulo, autor, genero, data, descricao };
+  return { id, titulo, autor, genero, data };
 }
 
 const initialRows = [
-  createData(
-    1,
-    "1984",
-    "George Orwell",
-    "Ficção",
-    "2023-01-15",
-    "Distopia sobre um governo totalitário."
-  ),
-  createData(
-    2,
-    "O Hobbit",
-    "J.R.R. Tolkien",
-    "Fantasia",
-    "2023-02-10",
-    "Uma aventura na Terra Média."
-  ),
+  createData(1, "1984", "George Orwell", "Ficção", "2025-01-15"),
+  createData(2, "O Hobbit", "J.R.R. Tolkien", "Fantasia", "2024-02-10"),
   createData(
     3,
     "Dom Casmurro",
     "Machado de Assis",
     "Literatura Brasileira",
-    "2023-03-05",
-    "Romance clássico brasileiro."
+    "2024-03-05"
   ),
   createData(
     4,
     "O Pequeno Príncipe",
     "Antoine de Saint-Exupéry",
     "Infantil",
-    "2023-04-20",
-    "Uma fábula filosófica."
+    "2024-04-20"
   ),
   createData(
     5,
     "A Revolução dos Bichos",
     "George Orwell",
     "Ficção",
-    "2023-05-30",
-    "Uma sátira política."
+    "2024-05-30"
   ),
 ];
 
@@ -195,7 +176,6 @@ export default function BookList() {
                   <TableCell>{row.autor}</TableCell>
                   <TableCell>{row.genero}</TableCell>
                   <TableCell>{row.data}</TableCell>
-                  <TableCell>{row.descricao}</TableCell>
                   <TableCell>
                     <IconButton>
                       <EditIcon />
