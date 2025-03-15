@@ -36,6 +36,15 @@ Este projeto é a Fase 1 do trabalho prático da disciplina de Desenvolvimento d
 * **Feedback Visual para o Usuário:** Indica ao usuário se os campos do formulário foram preenchidos corretamente.
 * **Persistência Local:** Os livros cadastrados são armazenados no `localStorage` para manter os dados entre sessões.
 
+## Instalação e Execução
+
+1. **Clone o repositório:** `git clone https://github.com/gabicastrum/thebookstorecat.git`
+2. **Navegue até a pasta raiz do projeto:** `cd thebookstorecat`
+3. **Instale as dependências:** `npm install`
+4. **Inicie o servidor de desenvolvimento:** `npm run dev`
+
+A aplicação estará disponível em `http://localhost:5173` (ou em outra porta, se configurado diferentemente).
+
 ## Imagens da Aplicação
 
 Estrutura:
@@ -63,13 +72,3 @@ Possibilidade de seleção de livros para deletar:
 Possibilidade de edição de informações de livros cadastrados (abre modal para edição após clicar em no ícone de lápis):
 ![image](https://github.com/user-attachments/assets/ba3fa224-92e3-4dc6-a56f-8a726ad77d39)
 
-
-
-## Instalação e Execução
-
-1. **Clone o repositório:** `git clone https://github.com/gabicastrum/thebookstorecat.git`
-2. **Navegue até a pasta raiz do projeto:** `cd thebookstorecat`
-3. **Instale as dependências:** `npm install`
-4. **Inicie o servidor de desenvolvimento:** `npm run dev`
-
-A aplicação estará disponível em `http://localhost:5173` (ou em outra porta, se configurado diferentemente).
