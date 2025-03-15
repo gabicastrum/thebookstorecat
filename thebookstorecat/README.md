@@ -40,11 +40,30 @@ Este projeto é a Fase 1 do trabalho prático da disciplina de Desenvolvimento d
 
 Estrutura:
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/47dca716-2e5c-4fdc-ab8f-2eb23f7b2bd2)
 
-Telas:
 
-**(Inserir a imagem 0fc4b5333dae2e05bc8541cf054b09a5.jpg)**
+**Telas:**
+
+Home (tela da página inicial):
+![image](https://github.com/user-attachments/assets/25aa9a20-8a5a-4246-85ae-98c7f3792f47)
+
+About (tela sobre):
+![image](https://github.com/user-attachments/assets/d422bf3f-edb1-48f4-a8b2-cbcddcc256ed)
+
+Register your book (tela para cadastro de livros):
+![image](https://github.com/user-attachments/assets/6efa23e6-fa11-4fb0-b77b-f17f5c9eb329)
+
+Books (tela para lista de livros, que pode ser acessada após registro ou pela barra de navegação):
+![image](https://github.com/user-attachments/assets/56abb930-af93-4cca-a0cb-ec69a9a7e62e)
+
+Possibilidade de seleção de livros para deletar:
+![image](https://github.com/user-attachments/assets/50d1101f-0dae-4892-a99d-bacd368dfae4)
+
+Possibilidade de edição de informações de livros cadastrados (abre modal para edição após clicar em no ícone de lápis):
+![image](https://github.com/user-attachments/assets/ba3fa224-92e3-4dc6-a56f-8a726ad77d39)
+
+
 
 ## Instalação e Execução
 
