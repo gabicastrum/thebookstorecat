@@ -1,3 +1,7 @@
+:root {
+  --AppBar-background: brown;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -12,10 +16,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #a54018aa);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #ff925baa);
 }
 
 @keyframes logo-spin {
