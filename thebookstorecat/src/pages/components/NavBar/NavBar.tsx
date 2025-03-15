@@ -1,21 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
-  { lable: "Página Inicial", path: "/" },
-  { lable: "Sobre", path: "/sobre" },
-  { lable: "Livros", path: "/livros" },
-  { lable: "Cadastre seu livro", path: "/livros/cadastro" },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Books", path: "/books" },
+  { label: "Register Your Book", path: "/books/register" },
 ];
 
 function NavBar() {
@@ -34,7 +36,10 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ width: "100%" }}>
+    <AppBar
+      position="fixed"
+      sx={{ width: "100%", backgroundColor: "#a54018aa" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -88,7 +93,7 @@ function NavBar() {
                   onClick={() => handleCloseNavMenu(page.path)}
                 >
                   <Typography sx={{ textAlign: "center" }}>
-                    {page.lable}
+                    {page.label}
                   </Typography>
                 </MenuItem>
               ))}
@@ -119,7 +124,7 @@ function NavBar() {
                 onClick={() => handleCloseNavMenu(page.path)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page.lable}
+                {page.label}
               </Button>
             ))}
           </Box>
