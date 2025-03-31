@@ -20,19 +20,12 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import BookForm from "../BookForm/BookForm";
-
-interface Data {
-  id: number;
-  title: string;
-  author: string;
-  genre: string;
-  date: string;
-}
+import { Book } from "../../../models/Book";
 
 interface BookListProps {
-  books: Data[];
+  books: Book[];
   removeBooks: (idsToRemove: number[]) => void;
-  updateBooks: (updatedBooks: Data[]) => void;
+  updateBooks: (updatedBooks: Book[]) => void;
 }
 
 const BookList: React.FC<BookListProps> = ({
@@ -41,12 +34,12 @@ const BookList: React.FC<BookListProps> = ({
   updateBooks,
 }) => {
   const [order, setOrder] = useState<"asc" | "desc">("asc");
-  const [orderBy] = useState<keyof Data>("title");
+  const [orderBy] = useState<keyof Book>("title");
   const [selected, setSelected] = useState<number[]>([]);
-  const [editingBook, setEditingBook] = useState<Data | null>(null);
+  const [editingBook, setEditingBook] = useState<Book | null>(null);
   const [open, setOpen] = useState(false);
 
-  const handleOpen = (book: Data) => {
+  const handleOpen = (book: Book) => {
     setEditingBook(book);
     setOpen(true);
   };
@@ -55,16 +48,21 @@ const BookList: React.FC<BookListProps> = ({
     setOpen(false);
   };
 
-  const handleEdit = (book: Data) => {
+  const handleEdit = (book: Book) => {
+    //TODO: Consultar livro por id
     handleOpen(book);
   };
 
-  const handleSaveEdit = (updatedBook: Data) => {
-    updateBooks(books.map(book => book.id === updatedBook.id ? updatedBook : book));
+  const handleSaveEdit = (updatedBook: Book) => {
+    updateBooks([updatedBook]);
     handleClose();
   };
 
   const handleDelete = () => {
+    if (selected.length === 0) {
+      alert("Selecione pelo menos um livro para remover.");
+      return;
+    }
     removeBooks(selected);
     setSelected([]);
   };
@@ -102,7 +100,7 @@ const BookList: React.FC<BookListProps> = ({
                     }
                   />
                 </TableCell>
-                {["Title", "Author", "Genre", "Date", "Edit"].map(
+                {["Title", "Author", "Genre", "readAt", "Edit"].map(
                   (label, index) => (
                     <TableCell key={index}>
                       <TableSortLabel
@@ -142,7 +140,7 @@ const BookList: React.FC<BookListProps> = ({
                   <TableCell>{book.title}</TableCell>
                   <TableCell>{book.author}</TableCell>
                   <TableCell>{book.genre}</TableCell>
-                  <TableCell>{book.date}</TableCell>
+                  <TableCell>{book.readAt}</TableCell>
                   <TableCell>
                     <IconButton onClick={() => handleEdit(book)}>
                       {" "}

@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, MenuItem, Box, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-
-interface Data {
-  id: number;
-  title: string;
-  author: string;
-  genre: string;
-  date: string;
-}
+import { Book } from "../../../models/Book";
 
 const theme = createTheme({
   palette: {
@@ -22,21 +15,21 @@ const theme = createTheme({
 });
 
 interface BookFormProps {
-  book?: Data;
-  onSave?: (book: Data) => void;
+  book?: Book;
+  onSave?: (book: Book) => void;
   onCancel?: () => void;
-  onAddBook?: (book: Data) => void;
+  onAddBook?: (book: Book) => void;
 }
 
 export default function BookForm({ book, onSave, onCancel, onAddBook }: BookFormProps) {
   const navigate = useNavigate();
-  const [editedBook, setEditedBook] = useState<Data>(
+  const [editedBook, setEditedBook] = useState<Book>(
     book || {
       id: Date.now(),
       title: "",
       author: "",
       genre: "",
-      date: "",
+      readAt: "",
     }
   );
 
@@ -56,7 +49,7 @@ export default function BookForm({ book, onSave, onCancel, onAddBook }: BookForm
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (onSave) {
-      onSave(editedBook);
+      onSave(editedBook); 
     } else if (onAddBook) {
       onAddBook(editedBook);
     }
@@ -116,9 +109,9 @@ export default function BookForm({ book, onSave, onCancel, onAddBook }: BookForm
         </TextField>
         <TextField
           label="Date read"
-          name="date"
+          name="readAt"
           type="date"
-          value={editedBook.date}
+          value={editedBook.readAt}
           onChange={handleChange}
           required
           InputLabelProps={{ shrink: true }}
